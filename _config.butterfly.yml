@@ -1,11 +1,11 @@
 # --------------------------------------
-# Butterfly Theme Configuration
+# Butterfly Theme Configuration - Glassmorphism Dark Knight
 # Docs: https://butterfly.js.org/
 # --------------------------------------
 
 # Navigation
 nav:
-  logo:
+  logo: /images/logo.png
   display_title: true
   fixed: false
 
@@ -16,7 +16,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   关于: /about/ || fas fa-user
 
-# Code Blocks
+# Code Blocks - dark theme fits Batman aesthetic
 code_blocks:
   theme: darker
   macStyle: true
@@ -29,25 +29,50 @@ code_blocks:
 
 # Social links
 social:
-  fab fa-github: https://github.com/stevewang25 || Github || '#24292e'
+  fab fa-github: https://github.com/stevewang25 || Github || '#49B1F5'
 
 # Image Settings
-favicon:
+favicon: /images/favicon.ico
 avatar:
-  img: https://avatars.githubusercontent.com/u/0?v=4
-  effect: false
+  img: /images/avatar.jpg
+  effect: true
 
+# Banner images - Batman 2025 comic 4K backgrounds
 disable_top_img: false
-default_top_img:
 
-# Home page subtitle
+# Default top image for pages without specific banner
+default_top_img: /images/batman-bg-1.jpg
+
+# Homepage banner
+index_img: /images/batman-bg-1.jpg
+
+# Archive banner
+archive_img: /images/batman-bg-2.jpg
+
+# Tag banner
+tag_img: /images/batman-bg-3.jpg
+
+# Category banner
+category_img: /images/batman-bg-2.jpg
+
+# Site background (optional)
+background:
+
+# Cover settings
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+
+# Home page subtitle - typewriter effect
 subtitle:
   enable: true
   effect: true
   source: false
   sub:
-    - 欢迎来到我的博客
-    - 记录学习与成长
+    - 黑暗中的骑士，代码里的行者
+    - I am Vengeance. I am the Night.
+    - 记录技术，分享生活
 
 # Index layout
 index_layout: 3
@@ -103,9 +128,9 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text:  Powered by Hexo & Butterfly
+  custom_text:  Powered by Hexo & Butterfly | Dark Knight Rises
 
-# Sidebar
+# Sidebar (glassmorphism compatible)
 aside:
   enable: true
   hide: false
@@ -118,7 +143,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 全栈开发 / 终身学习者
+    description: 暗夜骑士 / 代码行者
     button:
       enable: true
       icon: fab fa-github
@@ -126,7 +151,7 @@ aside:
       link: https://github.com/stevewang25
   card_announcement:
     enable: true
-    content: 欢迎来到我的个人博客！🎉
+    content: 💎 黑暗中的代码之光
   card_recent_post:
     enable: true
     limit: 5
@@ -155,7 +180,7 @@ aside:
 # Bottom right buttons
 readmode: true
 
-# Dark mode
+# Dark mode - default to dark for Batman theme vibe
 darkmode:
   enable: true
   button: true
@@ -163,7 +188,7 @@ darkmode:
 
 rightside_scroll_percent: false
 
-# Search (local search)
+# Search
 search:
   use: local_search
   placeholder: 搜索文章...
@@ -172,7 +197,7 @@ search:
     top_n_per_article: 1
     unescape: false
 
-# Comments - Giscus (free, open source, GitHub-based)
+# Comments - Giscus
 comments:
   use: giscus
   text: true
@@ -185,7 +210,7 @@ giscus:
   repo_id:
   category_id:
   light_theme: light
-  dark_theme: dark
+  dark_theme: dark_dimmed
 
 # Share
 share:
@@ -193,26 +218,26 @@ share:
   sharejs:
     sites: facebook,x,wechat,weibo,qq
 
-# Analysis (BAIDU)
+# Analysis
 baidu_analytics:
 
-# Beautify
+# Theme Color - Dark Knight palette
 theme_color:
   enable: true
   main: "#49B1F5"
-  paginator: "#00c4b6"
+  paginator: "#49B1F5"
   button_hover: "#FF7242"
-  text_selection: "#00c4b6"
-  link_color: "#99a9bf"
-  meta_color: "#858585"
-  hr_color: "#A4D8FA"
+  text_selection: "#49B1F5"
+  link_color: "#49B1F5"
+  meta_color: "#a0a0b0"
+  hr_color: "#49B1F5"
   code_foreground: "#F47466"
-  code_background: "rgba(27, 31, 35, .05)"
-  toc_color: "#00c4b6"
-  blockquote_padding_color: "#49b1f5"
-  blockquote_background_color: "#49b1f5"
-  scrollbar_color: "#49b1f5"
-  meta_theme_color_light: "ffffff"
+  code_background: "rgba(15, 15, 25, .7)"
+  toc_color: "#49B1F5"
+  blockquote_padding_color: "#49B1F5"
+  blockquote_background_color: "rgba(73, 177, 245, 0.1)"
+  scrollbar_color: "#49B1F5"
+  meta_theme_color_light: "1a1a2e"
   meta_theme_color_dark: "#0d0d0d"
 
 rounded_corners_ui: true
@@ -228,7 +253,7 @@ preloader:
 
 enter_transitions: true
 
-display_mode: light
+display_mode: dark
 
 # Font
 font:
@@ -238,22 +263,28 @@ font:
 hr_icon:
   enable: true
 
-# Background effects
+# Disable default ribbon - using custom firefly effect instead
 canvas_ribbon:
-  enable: true
-  size: 150
-  alpha: 0.6
-  zIndex: -1
-  click_to_change: false
-  mobile: false
+  enable: false
+
+# Firefly effect (custom)
+fireworks:
+  enable: false
+
+click_heart:
+  enable: false
 
 # Lightbox
 lightbox: fancybox
 
-# Inject
+# ==========================================
+# Custom CSS & JS Injection
+# ==========================================
 inject:
   head:
+    - <link rel="stylesheet" href="/css/glassmorphism.css">
   bottom:
+    - <script src="/js/firefly.js"></script>
 
 # CDN
 CDN:
