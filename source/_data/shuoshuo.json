@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2025-06-29 22:15:00",
+    "author": "Steve",
+    "avatar": "/images/avatar.jpg",
+    "content": "今天把博客的 Xianxia 主题调好了，金色粒子特效跑在暗色毛玻璃背景上，真的有凡人修仙传的意境了。✨",
+    "tags": ["博客", "Hexo"],
+    "key": "shuoshuo-001"
+  },
+  {
+    "date": "2025-06-28 18:30:00",
+    "author": "Steve",
+    "avatar": "/images/avatar.jpg",
+    "content": "写了一天 Rust，借用检查器依然是最大的心魔。不过慢慢开始理解 ownership 的哲学了——就像修仙小说里说的，法宝有灵，不可轻授。🦀",
+    "tags": ["Rust", "编程"],
+    "key": "shuoshuo-002"
+  },
+  {
+    "date": "2025-06-27 12:00:00",
+    "author": "Steve",
+    "avatar": "/images/avatar.jpg",
+    "content": "最近在看《凡人修仙传》动画版，韩立终于结丹了！一百多集的铺垫，太不容易了。修仙之路漫漫，代码之路亦然。",
+    "tags": ["动漫", "凡人修仙传"],
+    "key": "shuoshuo-003"
+  },
+  {
+    "date": "2025-06-25 09:45:00",
+    "author": "Steve",
+    "avatar": "/images/avatar.jpg",
+    "content": "部署博客到 GitHub Pages 的过程比想象中顺利。自动构建、自动部署，爽。唯一的坑是自定义域名和 HTTPS——不过资料多，跟着做就好。",
+    "tags": ["博客", "GitHub"],
+    "key": "shuoshuo-004"
+  },
+  {
+    "date": "2025-06-23 20:00:00",
+    "author": "Steve",
+    "avatar": "/images/avatar.jpg",
+    "content": "第一次用 GROMACS 跑分子动力学模拟，配了半天的参数，最后发现力场文件路径写错了……debug 半小时，运行三分钟 😅",
+    "tags": ["GROMACS", "科研"],
+    "key": "shuoshuo-005"
+  }
+]

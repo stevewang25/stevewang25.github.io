@@ -6,13 +6,16 @@
 nav:
   logo:
   display_title: true
-  fixed: false
+  fixed: true
 
 menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
+  说说: /shuoshuo/ || fas fa-comment-dots
+  瞬间: /moments/ || fas fa-images
+  导航: /links/ || fas fa-link
   关于: /about/ || fas fa-user
 
 # Code Blocks - 墨色风格
@@ -245,11 +248,23 @@ click_heart:
 
 lightbox: fancybox
 
+# PJAX - 无刷新页面切换，保持音乐播放不中断
+pjax:
+  enable: true
+
+# APlayer - 全局音乐播放器
+aplayerInject:
+  enable: true
+  per_page: false
+
 # Custom CSS & JS - 仙侠毛玻璃 + 灵气粒子
 inject:
   head:
     - <link rel="stylesheet" href="/css/xianxia.css">
   bottom:
+    - <script src="/js/nav-scroll.js"></script>
+    - <script src="/js/bg-carousel.js"></script>
+    - <script src="/js/music-player.js"></script>
     - <script src="/js/xianxia-particles.js"></script>
     - <script src="/js/video-bg.js"></script>
 

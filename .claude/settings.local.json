@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(npx hexo *)",
+      "Bash(mv \"【哲风壁纸】仙侠-凡人修仙传.jpg\"   \"fanren-bg-2.jpg\")",
+      "Bash(mv \"【哲风壁纸】仙鹤-修仙者.jpg\"       \"fanren-bg-3.jpg\")",
+      "Bash(mv \"【哲风壁纸】修仙-凡人修仙传.jpg\"   \"fanren-bg-4.jpg\")",
+      "Bash(mv \"【哲风壁纸】修仙-元婴韩立.jpg\"     \"fanren-bg-5.jpg\")",
+      "Bash(mv \"【哲风壁纸】修仙-冰晶背景.jpg\"     \"fanren-bg-6.jpg\")",
+      "Bash(npm install *)",
+      "Bash(node -e ' *)",
+      "Bash(cd C:\\\\path\\\\to\\\\my-project *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4001/)",
+      "Bash(read p *)",
+      "Bash(npm uninstall *)",
+      "Bash(git checkout *)",
+      "Bash(git commit -m 'feat: 新增说说/瞬间/导航页面 + 背景轮播 + 音乐播放器 + 导航毛玻璃 *)"
     ]
   }
 }
