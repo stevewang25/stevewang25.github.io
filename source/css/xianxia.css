@@ -1,0 +1,141 @@
+/* ==========================================
+   仙侠风格 - 凡人修仙传主题
+   Glassmorphism + 金墨配色
+   ========================================== */
+
+/* --- 全局毛玻璃 --- */
+.card-widget,
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+#aside-content .card-widget,
+#post,
+#page,
+#archive,
+#category,
+#tag {
+  background: rgba(20, 16, 10, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(201, 169, 110, 0.12) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(201, 169, 110, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 24px rgba(201, 169, 110, 0.08), inset 0 1px 0 rgba(201, 169, 110, 0.1) !important;
+  border-color: rgba(201, 169, 110, 0.35) !important;
+}
+
+/* --- 顶栏导航 --- */
+#nav {
+  background: rgba(18, 14, 8, 0.65) !important;
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 封面/页头 --- */
+#page-header #post-info,
+#page-header #page-site-info {
+  background: rgba(20, 16, 10, 0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  padding: 20px 30px;
+}
+
+/* --- 标题金色发光 --- */
+#site-title,
+#site-subtitle {
+  text-shadow: 0 0 20px rgba(201, 169, 110, 0.5), 0 0 40px rgba(201, 169, 110, 0.2);
+}
+
+/* --- 底栏 --- */
+#footer {
+  background: rgba(18, 14, 8, 0.55) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* --- 滚动条 --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(20, 16, 10, 0.5); }
+::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 169, 110, 0.7); }
+
+/* --- 代码块 --- */
+figure.highlight,
+#article-container pre {
+  background: rgba(10, 8, 4, 0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(201, 169, 110, 0.08);
+}
+
+/* --- 标签/分类 --- */
+.article-tag-list-link,
+.article-category-list-link {
+  background: rgba(201, 169, 110, 0.1) !important;
+  border: 1px solid rgba(201, 169, 110, 0.25) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease;
+  color: #c9a96e !important;
+}
+.article-tag-list-link:hover,
+.article-category-list-link:hover {
+  background: rgba(201, 169, 110, 0.22) !important;
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.25);
+}
+
+/* --- 链接 --- */
+a {
+  color: #c9a96e;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #d4a574;
+}
+
+/* --- 引用块 --- */
+blockquote {
+  border-left: 3px solid #c9a96e !important;
+  background: rgba(201, 169, 110, 0.06) !important;
+}
+
+/* --- 文章标题 --- */
+.article-title a {
+  color: #d4a574 !important;
+}
+.article-title a:hover {
+  color: #e0c088 !important;
+}
+
+/* --- 分页按钮 --- */
+#pagination .page-number.current {
+  background: rgba(201, 169, 110, 0.3) !important;
+  border-color: rgba(201, 169, 110, 0.5) !important;
+}
+
+/* --- 深色模式增强 --- */
+[data-theme="dark"] .card-widget,
+[data-theme="dark"] #recent-posts > .recent-post-item {
+  background: rgba(10, 8, 4, 0.65) !important;
+  border-color: rgba(201, 169, 110, 0.08) !important;
+}
+
+/* --- 移动端 --- */
+@media screen and (max-width: 768px) {
+  #nav { background: rgba(18, 14, 8, 0.85) !important; }
+  .card-widget, .recent-post-item { border-radius: 12px !important; }
+}
+
+/* --- 选中文字 --- */
+::selection {
+  background: rgba(201, 169, 110, 0.3);
+  color: #fff;
+}

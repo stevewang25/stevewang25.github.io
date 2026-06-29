@@ -1,11 +1,10 @@
 # --------------------------------------
-# Butterfly Theme Configuration - Glassmorphism Dark Knight
-# Docs: https://butterfly.js.org/
+# Butterfly Theme - 凡人修仙传 仙侠风格
 # --------------------------------------
 
 # Navigation
 nav:
-  logo: /images/logo.png
+  logo:
   display_title: true
   fixed: false
 
@@ -16,7 +15,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   关于: /about/ || fas fa-user
 
-# Code Blocks - dark theme fits Batman aesthetic
+# Code Blocks - 墨色风格
 code_blocks:
   theme: darker
   macStyle: true
@@ -29,50 +28,26 @@ code_blocks:
 
 # Social links
 social:
-  fab fa-github: https://github.com/stevewang25 || Github || '#49B1F5'
+  fab fa-github: https://github.com/stevewang25 || Github || '#c9a96e'
 
-# Image Settings
-favicon: /images/favicon.ico
-avatar:
-  img: /images/avatar.jpg
-  effect: true
-
-# Banner images - Batman 2025 comic 4K backgrounds
+# Banner images - 凡人修仙传 4K
 disable_top_img: false
 
-# Default top image for pages without specific banner
-default_top_img: /images/batman-bg-1.jpg
+default_top_img: /images/fanren-bg-1.jpg
+index_img: /images/fanren-bg-1.jpg
+archive_img: /images/fanren-bg-2.jpg
+tag_img: /images/fanren-bg-3.jpg
+category_img: /images/fanren-bg-2.jpg
 
-# Homepage banner
-index_img: /images/batman-bg-1.jpg
-
-# Archive banner
-archive_img: /images/batman-bg-2.jpg
-
-# Tag banner
-tag_img: /images/batman-bg-3.jpg
-
-# Category banner
-category_img: /images/batman-bg-2.jpg
-
-# Site background (optional)
-background:
-
-# Cover settings
-cover:
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-
-# Home page subtitle - typewriter effect
+# Home page subtitle - 修仙风
 subtitle:
   enable: true
   effect: true
   source: false
   sub:
-    - 黑暗中的骑士，代码里的行者
-    - I am Vengeance. I am the Night.
-    - 记录技术，分享生活
+    - 凡人不凡，修仙之路
+    - 大道三千，只取一瓢
+    - 记录技术与生活
 
 # Index layout
 index_layout: 3
@@ -128,9 +103,9 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text:  Powered by Hexo & Butterfly | Dark Knight Rises
+  custom_text:  Powered by Hexo & Butterfly | 凡人不凡
 
-# Sidebar (glassmorphism compatible)
+# Sidebar
 aside:
   enable: true
   hide: false
@@ -143,7 +118,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 暗夜骑士 / 代码行者
+    description: 修仙路上的代码行者
     button:
       enable: true
       icon: fab fa-github
@@ -151,7 +126,7 @@ aside:
       link: https://github.com/stevewang25
   card_announcement:
     enable: true
-    content: 💎 黑暗中的代码之光
+    content: ✨ 大道至简，凡人不凡
   card_recent_post:
     enable: true
     limit: 5
@@ -180,7 +155,7 @@ aside:
 # Bottom right buttons
 readmode: true
 
-# Dark mode - default to dark for Batman theme vibe
+# Dark mode
 darkmode:
   enable: true
   button: true
@@ -197,7 +172,7 @@ search:
     top_n_per_article: 1
     unescape: false
 
-# Comments - Giscus
+# Comments
 comments:
   use: giscus
   text: true
@@ -216,29 +191,26 @@ giscus:
 share:
   use: sharejs
   sharejs:
-    sites: facebook,x,wechat,weibo,qq
+    sites: wechat,weibo,qq
 
-# Analysis
-baidu_analytics:
-
-# Theme Color - Dark Knight palette
+# Theme Color - 仙侠金+墨绿配色
 theme_color:
   enable: true
-  main: "#49B1F5"
-  paginator: "#49B1F5"
-  button_hover: "#FF7242"
-  text_selection: "#49B1F5"
-  link_color: "#49B1F5"
-  meta_color: "#a0a0b0"
-  hr_color: "#49B1F5"
-  code_foreground: "#F47466"
-  code_background: "rgba(15, 15, 25, .7)"
-  toc_color: "#49B1F5"
-  blockquote_padding_color: "#49B1F5"
-  blockquote_background_color: "rgba(73, 177, 245, 0.1)"
-  scrollbar_color: "#49B1F5"
-  meta_theme_color_light: "1a1a2e"
-  meta_theme_color_dark: "#0d0d0d"
+  main: "#c9a96e"
+  paginator: "#c9a96e"
+  button_hover: "#d4a574"
+  text_selection: "#c9a96e"
+  link_color: "#c9a96e"
+  meta_color: "#a09080"
+  hr_color: "#8b7355"
+  code_foreground: "#d4a574"
+  code_background: "rgba(15, 12, 8, .85)"
+  toc_color: "#c9a96e"
+  blockquote_padding_color: "#c9a96e"
+  blockquote_background_color: "rgba(201, 169, 110, 0.08)"
+  scrollbar_color: "#8b7355"
+  meta_theme_color_light: "1a1610"
+  meta_theme_color_dark: "#0d0b06"
 
 rounded_corners_ui: true
 
@@ -246,7 +218,6 @@ mask:
   header: true
   footer: true
 
-# Loading animation
 preloader:
   enable: true
   source: 1
@@ -255,7 +226,6 @@ enter_transitions: true
 
 display_mode: dark
 
-# Font
 font:
   global_font_size: 16px
   code_font_size: 14px
@@ -263,39 +233,32 @@ font:
 hr_icon:
   enable: true
 
-# Disable default ribbon - using custom firefly effect instead
+# 关闭默认彩带 - 使用自定义仙气粒子特效
 canvas_ribbon:
   enable: false
 
-# Firefly effect (custom)
 fireworks:
   enable: false
 
 click_heart:
   enable: false
 
-# Lightbox
 lightbox: fancybox
 
-# ==========================================
-# Custom CSS & JS Injection
-# ==========================================
+# Custom CSS & JS - 仙侠毛玻璃 + 灵气粒子
 inject:
   head:
-    - <link rel="stylesheet" href="/css/glassmorphism.css">
+    - <link rel="stylesheet" href="/css/xianxia.css">
   bottom:
-    - <script src="/js/firefly.js"></script>
+    - <script src="/js/xianxia-particles.js"></script>
 
-# CDN
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
   version: true
 
-# PWA
 pwa:
   enable: false
 
-# Open graph
 Open_Graph_meta:
   enable: true
