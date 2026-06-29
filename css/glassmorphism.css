@@ -1,0 +1,149 @@
+/* ==========================================
+   Glassmorphism + Dark Knight Theme Styles
+   ========================================== */
+
+/* --- Background & Body --- */
+body {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 2s ease-in-out;
+}
+
+/* --- Glass Cards --- */
+.card-widget,
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+#aside-content .card-widget,
+#post,
+#page,
+#archive,
+#category,
+#tag {
+  background: rgba(20, 20, 30, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recent-post-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(73, 177, 245, 0.3) !important;
+}
+
+/* --- Cover / Banner --- */
+#page-header {
+  background: transparent !important;
+}
+
+#page-header #post-info,
+#page-header #page-site-info {
+  background: rgba(20, 20, 30, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px 30px;
+}
+
+/* --- Nav Bar Glass --- */
+#nav {
+  background: rgba(20, 20, 30, 0.6) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Sidebar --- */
+#aside-content .card-widget {
+  background: rgba(20, 20, 30, 0.5) !important;
+}
+
+/* --- Typography glow --- */
+#site-title,
+#site-subtitle {
+  text-shadow: 0 0 20px rgba(73, 177, 245, 0.4);
+}
+
+/* --- Footer --- */
+#footer {
+  background: rgba(20, 20, 30, 0.5) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 30, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(73, 177, 245, 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(73, 177, 245, 0.8);
+}
+
+/* --- Code blocks glass --- */
+figure.highlight,
+#article-container pre {
+  background: rgba(10, 10, 20, 0.7) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Table of Contents --- */
+#aside-content #card-toc {
+  background: rgba(20, 20, 30, 0.45) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+}
+
+/* --- Tag & Category pills --- */
+.article-tag-list-link,
+.article-category-list-link {
+  background: rgba(73, 177, 245, 0.15) !important;
+  border: 1px solid rgba(73, 177, 245, 0.3) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease;
+}
+.article-tag-list-link:hover,
+.article-category-list-link:hover {
+  background: rgba(73, 177, 245, 0.3) !important;
+  box-shadow: 0 0 16px rgba(73, 177, 245, 0.3);
+}
+
+/* --- Button glass --- */
+a#toPageButton,
+button {
+  transition: all 0.3s ease;
+}
+
+/* --- Dark mode glass enhancement --- */
+[data-theme="dark"] .card-widget,
+[data-theme="dark"] #recent-posts > .recent-post-item {
+  background: rgba(10, 10, 18, 0.6) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Mobile menu --- */
+@media screen and (max-width: 768px) {
+  #nav {
+    background: rgba(20, 20, 30, 0.8) !important;
+  }
+  .card-widget,
+  .recent-post-item {
+    border-radius: 12px !important;
+  }
+}
