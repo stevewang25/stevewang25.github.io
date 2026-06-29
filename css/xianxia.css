@@ -139,3 +139,339 @@ blockquote {
   background: rgba(201, 169, 110, 0.3);
   color: #fff;
 }
+
+/* ==========================================
+   动态渐变叠加层 + 光斑效果
+   ========================================== */
+
+/* 动态渐变覆盖层 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 110, 0.03) 0%,
+    rgba(20, 16, 10, 0.02) 30%,
+    rgba(100, 140, 120, 0.03) 60%,
+    rgba(201, 169, 110, 0.02) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 光斑（JS 注入 div） */
+.light-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -8;
+  opacity: 0.10;
+  will-change: transform;
+}
+
+.light-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.6), transparent);
+  animation: orbFloat1 20s ease-in-out infinite;
+}
+
+.light-orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(140, 180, 160, 0.5), transparent);
+  animation: orbFloat2 25s ease-in-out infinite;
+}
+
+.light-orb-3 {
+  width: 350px;
+  height: 350px;
+  top: 45%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(180, 150, 200, 0.4), transparent);
+  animation: orbFloat3 18s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-60px, 40px) scale(1.1); }
+  66%  { transform: translate(30px, -30px) scale(0.9); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(50px, -50px) scale(1.15); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(-40px, -20px) scale(1.05); }
+  75%  { transform: translate(20px, 30px) scale(0.95); }
+}
+
+[data-theme="dark"] .light-orb {
+  opacity: 0.06;
+}
+
+/* ==========================================
+   导航栏毛玻璃增强（透明/磨砂双状态）
+   ========================================== */
+
+/* 基础 sticky 增强 */
+#nav {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+}
+
+/* 透明态（页面顶部） */
+#nav.nav-transparent {
+  background: rgba(18, 14, 8, 0.28) !important;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+/* 磨砂态（滚动后） */
+#nav.nav-frosted {
+  background: rgba(14, 10, 6, 0.85) !important;
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   主题切换平滑过渡
+   ========================================== */
+
+body,
+#body-wrap,
+#nav,
+#footer,
+.card-widget,
+.recent-post-item,
+#post,
+#page,
+#article-container,
+.layout > div:first-child,
+#aside-content .card-widget {
+  transition-duration: 0.8s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 涵盖暗色模式切换的所有元素 */
+[data-theme] * {
+  transition: background-color 1s ease,
+              color 1s ease,
+              border-color 1s ease !important;
+}
+
+/* 保护动画元素不被过渡覆盖 */
+#xianxia-canvas,
+.light-orb,
+#bg-carousel-layer1,
+#bg-carousel-layer2,
+#nav {
+  transition-duration: initial !important;
+}
+
+/* ==========================================
+   说说页面（Shuoshuo/Moments）
+   ========================================== */
+
+.shuoshuo-item {
+  background: rgba(20, 16, 10, 0.5) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(201, 169, 110, 0.1) !important;
+  border-radius: 14px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shuoshuo-item:hover {
+  border-color: rgba(201, 169, 110, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.shuoshuo-content img {
+  border-radius: 10px;
+}
+
+.shuoshuo-tag {
+  background: rgba(201, 169, 110, 0.1) !important;
+  border: 1px solid rgba(201, 169, 110, 0.25) !important;
+  color: #c9a96e !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+}
+
+.shuoshuo-tag:hover {
+  background: rgba(201, 169, 110, 0.22) !important;
+  box-shadow: 0 0 16px rgba(201, 169, 110, 0.2);
+}
+
+.shuoshuo-comment-btn {
+  color: #c9a96e !important;
+}
+
+.shuoshuo-author {
+  color: #d4a574;
+}
+
+/* ==========================================
+   照片墙（Moments/Photo Wall）
+   ========================================== */
+
+.gallery-container .gallery-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 12px 0;
+}
+
+.gallery-container .gallery-items img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.gallery-container .gallery-items img:hover {
+  transform: scale(1.04);
+  border-color: rgba(201, 169, 110, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(201, 169, 110, 0.12);
+}
+
+.gallery-container button {
+  background: rgba(201, 169, 110, 0.12) !important;
+  border: 1px solid rgba(201, 169, 110, 0.25) !important;
+  color: #c9a96e !important;
+  border-radius: 24px !important;
+  padding: 10px 28px !important;
+  font-size: 15px !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+}
+
+.gallery-container button:hover {
+  background: rgba(201, 169, 110, 0.25) !important;
+  box-shadow: 0 0 20px rgba(201, 169, 110, 0.2);
+}
+
+/* ==========================================
+   链接树（Link Tree）
+   ========================================== */
+
+.link-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 28px;
+  background: rgba(20, 16, 10, 0.5);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  border-radius: 16px;
+  color: #d4a574;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-btn i {
+  font-size: 1.6em;
+  width: 44px;
+  text-align: center;
+  color: #c9a96e;
+  flex-shrink: 0;
+}
+
+.link-btn span {
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.link-btn small {
+  margin-left: auto;
+  color: #a09080;
+  font-size: 0.9em;
+}
+
+.link-btn:hover {
+  transform: translateY(-4px);
+  background: rgba(201, 169, 110, 0.12);
+  border-color: rgba(201, 169, 110, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(201, 169, 110, 0.12);
+  color: #e0c088;
+}
+
+[data-theme="dark"] .link-btn {
+  background: rgba(10, 8, 4, 0.6);
+}
+
+/* 移动端链接树 */
+@media screen and (max-width: 768px) {
+  .link-tree {
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .link-btn {
+    padding: 14px 20px;
+    border-radius: 14px;
+  }
+
+  .link-btn i {
+    font-size: 1.3em;
+    width: 34px;
+  }
+
+  .gallery-container .gallery-items {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-container .gallery-items img {
+    height: 180px;
+  }
+}
+
+/* 背景轮播层 will-change 优化 */
+#bg-carousel-layer1,
+#bg-carousel-layer2 {
+  will-change: opacity;
+}

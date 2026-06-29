@@ -15,13 +15,17 @@
         if (res.ok) {
           // 有视频 - 插入视频背景
           setupVideo(header);
+          // 通知背景轮播暂停
+          window.dispatchEvent(new CustomEvent('videoBgActive'));
         } else {
           // 无视频 - 不做额外处理，用主题默认的静态图
           console.log('视频不可用，使用静态背景');
+          window.dispatchEvent(new CustomEvent('videoBgInactive'));
         }
       })
       .catch(function () {
         // 请求失败，使用静态图
+        window.dispatchEvent(new CustomEvent('videoBgInactive'));
       });
   }
 
