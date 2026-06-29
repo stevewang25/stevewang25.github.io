@@ -251,6 +251,7 @@ inject:
     - <link rel="stylesheet" href="/css/xianxia.css">
   bottom:
     - <script src="/js/xianxia-particles.js"></script>
+    - <script src="/js/video-bg.js"></script>
 
 CDN:
   internal_provider: local
